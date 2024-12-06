@@ -40,10 +40,10 @@ Key problems JarGone solves include:
 
 This extension was made possible thanks to:
 
-- **[Gemini Nano on Google Chrome](https://developer.chrome.com/docs/ai/built-in)**: This experimental AI model enables JarGone to process and understand the selected text to generate simplified versions and breakdowns of complex words. The AI is leveraged through the **Prompt API**.
 - **[React](https://react.dev/) & [Material UI](https://mui.com/)**: For building an interactive and user-friendly frontend, enabling smooth UI transitions and customizable options.
 - **[WXT](https://wxt.dev/)**: A framework that offers amazing DX and bundles the necessary extension files together for smooth development, distribution and installation.
 - **[pnpm](https://pnpm.io/)**: A performant and efficient package manager for node.
+- **[OpenAI API](https://platform.openai.com/)**: For the text generation AI capabilities.
 - and countless other open-source dependencies!
 
 ## Installation
@@ -78,7 +78,6 @@ This project is open-source and available under the GPL License. See the [LICENS
 
 ## Acknowledgements
 
-- **[Gemini Nano on Google Chrome](https://developer.chrome.com/docs/ai/built-in)**: For providing the AI model used to simplify and explain complex text.
 - **[React](https://react.dev/) & [Material UI](https://mui.com/)**: For the powerful tools used to create the frontend user interface.
 - **[WXT](https://wxt.dev/)**: For helping bundle the extension files efficiently. 
 - **[pnpm](https://pnpm.io/)**: For helping keep the package size minimal.
