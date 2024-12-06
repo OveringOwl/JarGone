@@ -4,9 +4,7 @@
 <h3 align="center">Simplify complex jargon by translating it into clear, accessible language with a single click!</h3>
 
 <p align="center">
-    <a href="https://youtu.be/-e5QRBsvcAk">Demo</a>
-    ·  
-    <a href="https://github.com/OveringOwl/jargone-integrated-ai/releases">Download</a>
+    <a href="https://forms.gle/cH8xQ47McfeMe2S99">Launching Soon!</a>
 </p>
 
 <h3 align="center"><img width="700" alt="app screenshots" src="./src/public/screenshots/cover.png"></h3>
