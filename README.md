@@ -1,4 +1,4 @@
-# JarGone - AI-Powered Text Simplification Extension
+# JarGone - Simple Text
 
 
 <h3 align="center">Simplify complex jargon by translating it into clear, accessible language with a single click!</h3>
