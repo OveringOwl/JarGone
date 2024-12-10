@@ -77,7 +77,7 @@ function App() {
             )}
           </Grid>
 
-          <Box sx={{ height: '75px' }}>.</Box>
+          <Box sx={{ height: '75px' }}>&nbsp;</Box>
         </Grid>
 
         <Box id="bottom-nav">
