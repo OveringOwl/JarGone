@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import imageUrl from '/icon/title-logo.png';
 import './App.css';
-import theme from '../../components/theme/theme.ts'
+import theme from '../../components/theme/theme'
 import { ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
@@ -53,7 +53,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Container id="root">
         <header id="header">
-          <img draggable="false" src={imageUrl} alt="JarGone logo" className="logo" />
+          <img draggable="false" user-select="none" src={imageUrl} alt="JarGone logo" className="logo" />
           <span className="icon">
             <IconButton href="mailto:overingowl+jargone+support@gmail.com" aria-label="report bug">
               <ReportIcon />
@@ -85,7 +85,7 @@ function App() {
             showLabels
             value={0}
           >
-            <BottomNavigationAction icon={<HomeIcon />} />
+            <BottomNavigationAction icon={<HomeIcon color={theme.palette.primary.main} />} />
             <BottomNavigationAction icon={<SettingsIcon />} onClick={() => browser.runtime.openOptionsPage()} />
           </BottomNavigation>
         </Box>
