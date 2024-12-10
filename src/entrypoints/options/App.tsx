@@ -89,6 +89,18 @@ function App() {
             <Divider sx={{ mb: 2, mx: 2 }} />
 
             <Box sx={{ px: 2, py: 1 }}>
+              <Box sx={{ my: 2, letterSpacing: -0.5 }}>
+                <Typography variant='overline' sx={{ fontWeight: 700 }}>OpenAI API Key</Typography>
+                <TextField
+                  fullWidth
+                  autoComplete="off"
+                  variant="outlined"
+                  placeholder="sk-"
+                  value={apiKey}
+                  onChange={(e) => setApiKey(e.target.value)}
+                />
+              </Box>
+
               <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", my: 2, letterSpacing: -0.5 }}>
                 <Typography>Confetti animation</Typography>
                 <SwitchTextTrack
