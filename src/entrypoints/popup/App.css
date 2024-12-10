@@ -28,6 +28,7 @@
   justify-content: space-between;
   padding: 10px 0;
   border-bottom: 2px solid #F0F2F5;
+  user-select: none;
 }
 
 #bottom-nav {
