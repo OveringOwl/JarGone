@@ -72,7 +72,7 @@ function App() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          background: "linear-gradient(0deg, #FFBB00, #FFD900)",
+          background: `linear-gradient(0deg, ${theme.palette.yellowShade!.main}, ${theme.palette.yellowShade!.light})`,
         }}
       >
         <Card
