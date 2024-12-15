@@ -55,7 +55,7 @@ const SwitchTextTrack = (props: SwitchProps) => {
         backgroundColor: "#fff",
       },
       [`& + .${switchClasses.track}`]: {
-        background: `linear-gradient(to right, ${theme.palette.orangeShade.light}, ${theme.palette.orangeShade.main})`,
+        background: `linear-gradient(to right, ${theme.palette.primary.main}, ${theme.palette.primary.light})`,
         "&:before": {
           opacity: 1,
         },
