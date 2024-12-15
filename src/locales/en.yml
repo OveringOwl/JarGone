@@ -1,4 +1,5 @@
 extension:
-  name: jargone-integrated-ai
-  description: https://github.com/OveringOwl/jargone-integrated-ai
+  name: jargone
+  description: https://github.com/OveringOwl/jargone
 hello: Hello
+aiKeyHelper: Enter your API key (platform.openai.com/api-keys)
