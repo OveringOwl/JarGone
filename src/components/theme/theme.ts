@@ -22,6 +22,10 @@ declare module '@mui/material/styles' {
 const theme = createTheme({
   typography: {
     fontFamily: 'Poppins, sans-serif',
+    button: {
+      textTransform: 'none',
+      fontWeight: 600,
+    }
   },
   palette: {
     mode: 'light',
