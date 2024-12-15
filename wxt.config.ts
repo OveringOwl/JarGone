@@ -7,6 +7,7 @@ export default defineConfig({
     description: '__MSG_extension_description__',
     name: '__MSG_extension_name__',
     permissions: ["storage", "contextMenus", "activeTab", "scripting"],
+    action: {},
   },
   modules: [
     '@wxt-dev/module-react',
