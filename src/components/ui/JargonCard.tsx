@@ -9,18 +9,20 @@ import IconButton from '@mui/material/IconButton';
 import CopyIcon from '@/components/ui/CopyIcon';
 import GradientStarIcon from './GradientStarIcon';
 
-interface JargonCardProps extends Keyword { }
+interface JargonCardProps extends Keyword {
+  colorGradient?: string[]
+}
 
-const JargonCard: React.FC<JargonCardProps> = ({ keyword, type, meaning }) => {
+const JargonCard: React.FC<JargonCardProps> = ({ keyword, type, meaning, colorGradient }) => {
   const theme = useTheme();
 
   const typeColors: { [key: string]: [string, string] } = {
-    'adjective': [theme.palette.greenShade.light, theme.palette.greenShade.main],
-    'verb': [theme.palette.pinkShade.light, theme.palette.pinkShade.main],
-    'noun': [theme.palette.blueShade.light, theme.palette.blueShade.main],
-    'idiom': [theme.palette.purpleShade.light, theme.palette.purpleShade.main],
-    'slang': [theme.palette.orangeShade.light, theme.palette.orangeShade.main],
+    'adjective': [theme.palette.blueShade.light, theme.palette.blueShade.main],
     'error': [theme.palette.error.light, theme.palette.error.main],
+    'idiom': [theme.palette.purpleShade.light, theme.palette.purpleShade.main],
+    'noun': [theme.palette.greenShade.light, theme.palette.greenShade.main],
+    'slang': [theme.palette.orangeShade.light, theme.palette.orangeShade.main],
+    'verb': [theme.palette.pinkShade.light, theme.palette.pinkShade.main],
     default: ['#FFD900', '#FFBB00']
   };
 
@@ -30,7 +32,10 @@ const JargonCard: React.FC<JargonCardProps> = ({ keyword, type, meaning }) => {
     return typeColors[normalizedType || 'default'];
   };
 
-  const [startColor, stopColor] = getTypeColors(type);
+  if (!colorGradient) {
+    colorGradient = getTypeColors(type);
+  }
+  const [startColor, stopColor] = colorGradient;
   const uniqueId = React.useId();
 
   const copyKeyword = () => {
