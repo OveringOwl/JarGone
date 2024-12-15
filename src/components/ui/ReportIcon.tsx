@@ -9,7 +9,7 @@ interface ReportIconProps {
 const ReportIcon: React.FC<ReportIconProps> = ({
   height = '24',
   width = '24',
-  color = '#747474',
+  color = '#ABA2B4',
 }) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 24 24">
