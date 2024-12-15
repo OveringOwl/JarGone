@@ -52,7 +52,7 @@ const JargonCard: React.FC<JargonCardProps> = ({ keyword, type, meaning }) => {
             alignItems: 'center',
           }}>
             <Box sx={{
-              background: `linear-gradient(0deg, ${stopColor}, ${startColor} 70%)`,
+              background: `linear-gradient(0deg, ${stopColor}, ${startColor})`,
               padding: '2px 10px',
               borderRadius: '12px',
             }}>
