@@ -97,12 +97,13 @@ function App() {
                   variant="outlined"
                   placeholder="sk-"
                   value={apiKey}
+                  helperText={i18n.t('aiKeyHelper')}
                   onChange={(e) => setApiKey(e.target.value)}
                 />
               </Box>
 
               <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", my: 2, letterSpacing: -0.5 }}>
-                <Typography>Confetti animation</Typography>
+                <Typography>Confetti Animation</Typography>
                 <SwitchTextTrack
                   checked={confettiAnimation}
                   onChange={(e) => setConfettiAnimation(e.target.checked)}
@@ -110,7 +111,7 @@ function App() {
               </Box>
 
               <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", my: 2, letterSpacing: -0.5 }}>
-                <Typography>Replace text</Typography>
+                <Typography>Replace Text</Typography>
                 <SwitchTextTrack
                   checked={replaceText}
                   onChange={(e) => setReplaceText(e.target.checked)}
@@ -185,7 +186,7 @@ function App() {
             <Divider sx={{ mt: 6, mb: 2, mx: 2 }} />
 
             <Box sx={{ display: "flex", justifyContent: "space-between", mt: 2, mx: 2 }}>
-              <Button variant="text" color="error" onClick={async () => {
+              <Button variant="text" sx={{ borderRadius: 4 }} color="error" onClick={async () => {
                 await handleReset();
                 setMessage('Settings reset.');
                 setTimeout(() => setMessage(''), 3000);
@@ -199,7 +200,7 @@ function App() {
                 </Typography>
               )}
 
-              <Button variant="contained" color="primary" onClick={async () => {
+              <Button variant="contained" sx={{ borderRadius: 4 }} color="primary" onClick={async () => {
                 await handleSave();
                 setMessage('Settings saved!');
                 setTimeout(() => setMessage(''), 3000);
