@@ -13,7 +13,7 @@ interface GradientStarIconProps {
 const GradientStarIcon: React.FC<GradientStarIconProps> = ({
   height = '24',
   width = '24',
-  gradientColors = { start: '#B973FE', end: '#8305FF' },
+  gradientColors = { start: '#A2B4AC', end: '#A2B4AC' },
   uniqueId
 }) => {
   return (

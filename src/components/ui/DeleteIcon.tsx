@@ -9,7 +9,7 @@ interface DeleteIconProps {
 const DeleteIcon: React.FC<DeleteIconProps> = ({
   height = '24',
   width = '24',
-  color = '#ABA2B4',
+  color = '#A2B4AC',
 }) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 24 24">
