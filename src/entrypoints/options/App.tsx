@@ -191,7 +191,7 @@ function App() {
                 setMessage('Settings reset.');
                 setTimeout(() => setMessage(''), 3000);
               }}>
-                Reset
+                reset
               </Button>
 
               {message && (
@@ -200,12 +200,12 @@ function App() {
                 </Typography>
               )}
 
-              <Button variant="contained" sx={{ borderRadius: 4 }} color="primary" onClick={async () => {
+              <Button variant="outlined" sx={{ borderRadius: 4 }} color="primary" onClick={async () => {
                 await handleSave();
                 setMessage('Settings saved!');
                 setTimeout(() => setMessage(''), 3000);
               }}>
-                Save
+                save
               </Button>
             </Box>
 
