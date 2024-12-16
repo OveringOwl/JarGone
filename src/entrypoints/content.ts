@@ -42,8 +42,10 @@ export default defineContentScript({
 
       const range = selection.getRangeAt(0);
       range.deleteContents();
-      const newTextNode = document.createTextNode(newText);
-      range.insertNode(newTextNode);
+      const span = document.createElement('span');
+      span.textContent = newText;
+      span.classList.add('zoom-in');
+      range.insertNode(span);
 
       if (enableConfetti) {
         triggerConfetti();
