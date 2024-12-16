@@ -76,7 +76,9 @@ function App() {
             <JargonCard keyword={instructionalEntry.keyword} type={instructionalEntry.type} meaning={instructionalEntry.meaning} />
           ) : (
             [...keywordHistory].reverse().map((entry, index) => (
-              <JargonCard key={index} keyword={entry.keyword} type={entry.type} meaning={entry.meaning} />
+              <Box key={index} className='zoom-in'>
+                <JargonCard key={index} keyword={entry.keyword} type={entry.type} meaning={entry.meaning} />
+              </Box>
             ))
           )}
         </Box>
