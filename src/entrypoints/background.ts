@@ -14,7 +14,7 @@ export default defineBackground(() => {
 
   browser.sidePanel.setPanelBehavior({ openPanelOnActionClick: true });
 
-  browser.contextMenus.onClicked.addListener(async (info, tab) => {
+  browser.contextMenus.onClicked.addListener(async (info: any, tab: any) => {
     if (info.menuItemId === 'sendToAI' && info.selectionText && tab?.id) {
       browser.sidePanel.open({ windowId: tab.windowId });
 
