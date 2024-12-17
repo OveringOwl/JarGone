@@ -2,7 +2,7 @@ import './style.css';
 import confetti from 'canvas-confetti';
 
 export default defineContentScript({
-  matches: ['<all_urls>'],
+  matches: [],
 
   main() {
     let mouseX = 0;
@@ -13,7 +13,7 @@ export default defineContentScript({
       mouseY = event.clientY;
     });
 
-    browser.runtime.onMessage.addListener((message: unknown, sender, sendResponse: (message: unknown) => void) => {
+    browser.runtime.onMessage.addListener((message: unknown, sendResponse: (message: unknown) => void) => {
       const { type } = (message as { type: string });
 
       switch (type) {

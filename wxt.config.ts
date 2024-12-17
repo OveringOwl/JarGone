@@ -6,7 +6,7 @@ export default defineConfig({
     default_locale: 'en',
     description: '__MSG_extension_description__',
     name: '__MSG_extension_name__',
-    permissions: ["storage", "contextMenus", "activeTab", "scripting"],
+    permissions: ["storage", "contextMenus", "activeTab"],
     action: {},
   },
   modules: [
