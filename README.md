@@ -7,7 +7,7 @@
     <a href="https://forms.gle/cH8xQ47McfeMe2S99">Launching Soon!</a>
 </p>
 
-<h3 align="center"><img width="700" alt="app screenshots" src="./src/public/screenshots/cover.png"></h3>
+<h3 align="center"><img width="700" alt="app screenshots" src="./.github/assets/cover.png"></h3>
 
 ## Overview
 
