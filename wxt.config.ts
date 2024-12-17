@@ -4,11 +4,11 @@ import { defineConfig } from 'wxt'
 export default defineConfig({
   extensionApi: 'chrome',
   manifest: {
+    action: {},
     default_locale: 'en',
     description: '__MSG_extension_description__',
     name: '__MSG_extension_name__',
-    permissions: ["storage", "contextMenus", "activeTab"],
-    action: {},
+    permissions: ['storage', 'contextMenus', 'activeTab'],
   },
   modules: [
     '@wxt-dev/module-react',
