@@ -13,7 +13,3 @@
 .zoom-in {
   animation: zoomIn 0.2s ease-in-out;
 }
-
-body {
-  margin: 0;
-}
