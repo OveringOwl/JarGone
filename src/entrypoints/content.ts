@@ -56,9 +56,9 @@ export default defineContentScript({
     const getTypeColors = (type: string): string => {
       const opacity = 0.5;
       const typeColors: { [key: string]: string } = {
-        'adjective': `rgba(81, 240, 160, ${opacity})`,
+        'adjective': `rgba(0, 200, 255, ${opacity})`,
         'verb': `rgba(255, 112, 174, ${opacity})`,
-        'noun': `rgba(0, 200, 255, ${opacity})`,
+        'noun': `rgba(81, 240, 160, ${opacity})`,
         'idiom': `rgba(185, 115, 254, ${opacity})`,
         'slang': `rgba(255, 195, 0, ${opacity})`,
         'error': `rgba(254, 115, 115, ${opacity})`,
