@@ -1,75 +1,75 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles'
 
 declare module '@mui/material/styles' {
   interface Palette {
-    greenShade: Palette['primary'];
-    pinkShade: Palette['primary'];
-    blueShade: Palette['primary'];
-    purpleShade: Palette['primary'];
-    orangeShade: Palette['primary'];
-    yellowShade: Palette['primary'];
+    blueShade: Palette['primary']
+    greenShade: Palette['primary']
+    orangeShade: Palette['primary']
+    pinkShade: Palette['primary']
+    purpleShade: Palette['primary']
+    yellowShade: Palette['primary']
   }
   interface PaletteOptions {
-    greenShade: PaletteOptions['primary'];
-    pinkShade: PaletteOptions['primary'];
-    blueShade: PaletteOptions['primary'];
-    purpleShade: PaletteOptions['primary'];
-    orangeShade: PaletteOptions['primary'];
-    yellowShade: PaletteOptions['primary'];
+    blueShade: PaletteOptions['primary']
+    greenShade: PaletteOptions['primary']
+    orangeShade: PaletteOptions['primary']
+    pinkShade: PaletteOptions['primary']
+    purpleShade: PaletteOptions['primary']
+    yellowShade: PaletteOptions['primary']
   }
 }
 
 const theme = createTheme({
-  typography: {
-    fontFamily: 'Poppins, sans-serif',
-    button: {
-      textTransform: 'none',
-      fontWeight: 600,
-    }
-  },
   palette: {
-    mode: 'light',
-    primary: {
-      main: '#00DD55',
-      light: '#51F0A0',
-      dark: '#51F0A0',
+    blueShade: {
+      dark: '#00C8FF',
+      light: '#00C8FF',
+      main: '#0050FC',
     },
     error: {
-      main: '#FF0550',
-      light: '#FE7373',
       dark: '#FE7373',
+      light: '#FE7373',
+      main: '#FF0550',
     },
     greenShade: {
-      main: '#00DD55',
-      light: '#51F0A0',
       dark: '#51F0A0',
+      light: '#51F0A0',
+      main: '#00DD55',
+    },
+    mode: 'light',
+    orangeShade: {
+      dark: '#FFC300',
+      light: '#FFC300',
+      main: '#FC5800',
     },
     pinkShade: {
-      main: '#FF006F',
-      light: '#FF70AE',
       dark: '#FF70AE',
+      light: '#FF70AE',
+      main: '#FF006F',
     },
-    blueShade: {
-      main: '#0050FC',
-      light: '#00C8FF',
+    primary: {
       dark: '#00C8FF',
+      light: '#00C8FF',
+      main: '#0050FC',
     },
     purpleShade: {
-      main: '#8305FF',
-      light: '#B973FE',
       dark: '#B973FE',
-    },
-    orangeShade: {
-      main: '#FC5800',
-      light: '#FFC300',
-      dark: '#FFC300',
+      light: '#B973FE',
+      main: '#8305FF',
     },
     yellowShade: {
-      main: '#FFBB00',
-      light: '#FFD900',
       dark: '#FFD900',
+      light: '#FFD900',
+      main: '#FFBB00',
     },
   },
-});
+  typography: {
+    button: {
+      fontWeight: 600,
+      textTransform: 'none',
+    },
+    fontFamily: 'Poppins, sans-serif',
+  },
+})
 
 export default theme
