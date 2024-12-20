@@ -22,6 +22,7 @@ export default defineBackground(() => {
       const settings = await loadSettings()
       const apiKey = settings.apiKey || ''
       const locale = settings.locale || 'english'
+      const enableConfetti = settings.confettiAnimation !== false
       const enableReplaceText = settings.replaceText !== false
 
       try {
@@ -32,15 +33,15 @@ export default defineBackground(() => {
           })
         }
 
-      browser.tabs.sendMessage(tab.id, { state: 'waiting', type: 'CHANGE_CURSOR' })
+        browser.tabs.sendMessage(tab.id, { state: 'waiting', type: 'CHANGE_CURSOR' })
 
         const result = await fetchLLMResponse(selectedText, apiKey, locale, enableReplaceText)
         const { keywordArray, rewrittenText } = processLLMResponse(result, selectedText)
         await storeKeywords(keywordArray)
 
         const message = enableReplaceText
-          ? { enableConfetti: settings.confettiAnimation, newText: rewrittenText, type: 'REPLACE_TEXT' }
-          : { enableConfetti: settings.confettiAnimation, keywordArrayString: JSON.stringify(keywordArray), type: 'NOREPLACE_TEXT' }
+          ? { enableConfetti, newText: rewrittenText, type: 'REPLACE_TEXT' }
+          : { enableConfetti, keywordArrayString: JSON.stringify(keywordArray), type: 'NOREPLACE_TEXT' }
 
         browser.tabs.sendMessage(tab.id, message)
       }
