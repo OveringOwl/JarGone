@@ -32,7 +32,6 @@ export default antfu(
   // shadcn/ui
   ...compat.config({
     ignorePatterns: [
-      'src/components/ui/*',
       'src/lib/utils.ts',
       'tailwind.config.js',
     ],
