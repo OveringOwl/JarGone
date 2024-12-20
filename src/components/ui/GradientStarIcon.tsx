@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
 
 interface GradientStarIconProps {
-  height?: string;
-  width?: string;
   gradientColors?: {
-    start: string;
-    end: string;
-  };
-  uniqueId: string;
+    end: string
+    start: string
+  }
+  height?: string
+  uniqueId: string
+  width?: string
 }
 
 const GradientStarIcon: React.FC<GradientStarIconProps> = ({
@@ -18,29 +18,31 @@ const GradientStarIcon: React.FC<GradientStarIconProps> = ({
 }) => {
   return (
     <svg
-      width={width}
+      fill="none"
       height={height}
       viewBox="0 0 179 170"
-      fill="none"
+      width={width}
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
-        <linearGradient id={`gradient-${uniqueId}-1`} x1="75" y1="20" x2="75" y2="170" gradientUnits="userSpaceOnUse">
+        <linearGradient gradientUnits="userSpaceOnUse" id={`gradient-${uniqueId}-1`} x1="75" x2="75" y1="20" y2="170">
           <stop stopColor={gradientColors.start} />
           <stop offset="1" stopColor={gradientColors.end} />
         </linearGradient>
-        <linearGradient id={`gradient-${uniqueId}-1`} x1="146.5" y1="0" x2="146.5" y2="65" gradientUnits="userSpaceOnUse">
+        <linearGradient gradientUnits="userSpaceOnUse" id={`gradient-${uniqueId}-1`} x1="146.5" x2="146.5" y1="0" y2="65">
           <stop stopColor={gradientColors.start} />
           <stop offset="1" stopColor={gradientColors.end} />
         </linearGradient>
-        <linearGradient id={`gradient-${uniqueId}-1`} x1="147" y1="130" x2="147" y2="170" gradientUnits="userSpaceOnUse">
+        <linearGradient gradientUnits="userSpaceOnUse" id={`gradient-${uniqueId}-1`} x1="147" x2="147" y1="130" y2="170">
           <stop stopColor={gradientColors.start} />
           <stop offset="1" stopColor={gradientColors.end} />
         </linearGradient>
       </defs>
-      <path fillRule="evenodd" clipRule="evenodd"
+      <path
+        clipRule="evenodd"
         d="M83.0317 22.4793C85.2941 24.0571 87.1041 26.311 88.2353 29.0158L100.905 61.0218C101.659 62.8249 102.715 64.4778 104.072 65.9805C105.43 67.3328 107.014 68.3847 108.824 69.136L140.95 81.7581C143.665 82.885 145.928 84.6882 147.511 86.9422C149.095 89.4215 150 92.1262 150 95.0563C150 97.7611 149.095 100.691 147.511 102.945C145.928 105.424 143.665 107.228 140.95 108.129L108.824 120.751C107.014 121.503 105.43 122.554 104.072 123.907C102.715 125.409 101.659 127.062 100.905 128.866L88.2353 160.872C83.4841 173.043 66.5158 173.043 61.7647 160.872L49.095 128.866C48.3409 127.062 47.2851 125.485 45.9276 124.132C44.5701 122.63 42.9864 121.578 41.1765 120.977L9.04977 108.129C6.33484 107.228 4.07239 105.424 2.48868 102.945C0.904974 100.691 0 97.7611 0 95.0563C0 92.1262 0.904974 89.4215 2.48868 86.9422C4.07239 84.6882 6.33484 82.885 9.04977 81.7581L41.1765 69.136C42.9864 68.3847 44.5701 67.3328 45.9276 65.9805C47.2851 64.6281 48.3409 62.9752 49.095 61.0218L61.7647 29.0158C62.8959 26.311 64.7059 24.0571 66.9683 22.4793C69.457 20.9016 72.1719 20 74.8869 20C77.828 20 80.543 20.9016 83.0317 22.4793Z"
         fill={`url(#gradient-${uniqueId}-1)`}
+        fillRule="evenodd"
       />
       <path
         d="M152.235 3.90684C151.745 2.73479 150.961 1.75808 149.98 1.07438C148.902 0.390684 147.725 0 146.451 0C145.275 0 144.098 0.390684 143.02 1.07438C142.039 1.75808 141.255 2.73479 140.765 3.90684L135.275 17.7761C134.948 18.6226 134.49 19.3388 133.902 19.9249C133.314 20.5109 132.627 20.9667 131.843 21.2923L117.922 26.7618C116.745 27.2502 115.765 28.0316 115.078 29.0083C114.392 30.0826 114 31.2547 114 32.5244C114 33.6965 114.392 34.9662 115.078 35.9429C115.765 37.0173 116.745 37.7986 117.922 38.1893L131.843 43.7566C132.627 44.017 133.314 44.4728 133.902 45.124C134.49 45.71 134.948 46.3937 135.275 47.1751L140.765 61.0443C142.824 66.3186 150.176 66.3186 152.235 61.0443L157.725 47.1751C158.052 46.3937 158.51 45.6774 159.098 45.0263C159.686 44.4403 160.373 43.9845 161.157 43.6589L175.078 38.1893C176.255 37.7986 177.235 37.0173 177.922 35.9429C178.608 34.9662 179 33.6965 179 32.5244C179 31.2547 178.608 30.0826 177.922 29.0083C177.235 28.0316 176.255 27.2502 175.078 26.7618L161.157 21.2923C160.373 20.9667 159.686 20.5109 159.098 19.9249C158.51 19.2737 158.052 18.5575 157.725 17.7761L152.235 3.90684Z"
@@ -51,7 +53,7 @@ const GradientStarIcon: React.FC<GradientStarIconProps> = ({
         fill={`url(#gradient-${uniqueId}-1)`}
       />
     </svg>
-  );
-};
+  )
+}
 
 export default GradientStarIcon
