@@ -1,6 +1,5 @@
 # JarGone - Simple Text
 
-
 <h3 align="center">Simplify complex jargon by translating it into clear, accessible language with a single click!</h3>
 
 <p align="center">
@@ -17,7 +16,7 @@ With JarGone, users can access and comprehend complex information more easily, w
 
 ### Problem Being Solved
 
-*Have you ever seen how CEOs speak on LinkedIn?* 
+*Have you ever seen how CEOs speak on LinkedIn?*
 
 The web is filled with complex and inaccessible jargon that can be intimidating or confusing for a wide variety of users, from non-native speakers to those unfamiliar with certain fields or industries. This often leads to misunderstanding, missed opportunities for learning, and unnecessary frustration. JarGone addresses this issue by offering a simple way to clarify challenging text, allowing users to both understand and learn from what they read.
 
@@ -79,7 +78,7 @@ This project is open-source and available under the GPL License. See the [LICENS
 ## Acknowledgements
 
 - **[React](https://react.dev/) & [Material UI](https://mui.com/)**: For the powerful tools used to create the frontend user interface.
-- **[WXT](https://wxt.dev/)**: For helping bundle the extension files efficiently. 
+- **[WXT](https://wxt.dev/)**: For helping bundle the extension files efficiently.
 - **[pnpm](https://pnpm.io/)**: For helping keep the package size minimal.
 - and the countless other open-source dependencies.
 
