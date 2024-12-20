@@ -1,130 +1,133 @@
-import { useState, useEffect } from 'react';
-import { ThemeProvider } from '@mui/material/styles';
+import JargonCard from '@/components/ui/JargonCard.tsx'
+import SwitchTextTrack from '@/components/ui/SwitchTextTrack.tsx'
+import { MenuItem } from '@mui/material'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Card from '@mui/material/Card'
+import CardContent from '@mui/material/CardContent'
+import Divider from '@mui/material/Divider'
+import Select from '@mui/material/Select'
+import { ThemeProvider } from '@mui/material/styles'
+import TextField from '@mui/material/TextField'
+import Typography from '@mui/material/Typography'
+import { useEffect, useState } from 'react'
+
 import theme from '../../components/theme/theme.ts'
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import SwitchTextTrack from '@/components/ui/SwitchTextTrack.tsx';
-import TextField from '@mui/material/TextField';
-import Select from '@mui/material/Select';
-import Button from '@mui/material/Button';
-import Divider from '@mui/material/Divider';
-import JargonCard from '@/components/ui/JargonCard.tsx';
-import { MenuItem } from '@mui/material';
 
 function App() {
-  const settingsStoreKey = 'settings';
-  const [apiKey, setApiKey] = useState('');
-  const [confettiAnimation, setConfettiAnimation] = useState(true);
-  const [replaceText, setReplaceText] = useState(true);
-  const [locale, setLocale] = useState('english');
-  const [message, setMessage] = useState('');
+  const settingsStoreKey = 'settings'
+  const [apiKey, setApiKey] = useState('')
+  const [confettiAnimation, setConfettiAnimation] = useState(true)
+  const [replaceText, setReplaceText] = useState(true)
+  const [locale, setLocale] = useState('english')
+  const [message, setMessage] = useState('')
 
   useEffect(() => {
     // Load settings from local storage when the component mounts
     const loadSettings = async () => {
-      const savedSettings: string | null = await storage.getItem(`local:${settingsStoreKey}`);
+      const savedSettings: null | string = await storage.getItem(`local:${settingsStoreKey}`)
       if (savedSettings) {
-        const parsedSettings = JSON.parse(savedSettings);
-        setApiKey(parsedSettings.apiKey || '');
-        setConfettiAnimation(parsedSettings.confettiAnimation !== undefined ? parsedSettings.confettiAnimation : true);
-        setReplaceText(parsedSettings.replaceText !== undefined ? parsedSettings.replaceText : true);
-        setLocale(parsedSettings.locale || 'english');
+        const parsedSettings = JSON.parse(savedSettings)
+        setApiKey(parsedSettings.apiKey || '')
+        setConfettiAnimation(parsedSettings.confettiAnimation !== undefined ? parsedSettings.confettiAnimation : true)
+        setReplaceText(parsedSettings.replaceText !== undefined ? parsedSettings.replaceText : true)
+        setLocale(parsedSettings.locale || 'english')
       }
-    };
+    }
 
-    loadSettings();
-  }, []);
+    loadSettings()
+  }, [])
 
   const handleSave = async () => {
     const settings = {
       apiKey,
       confettiAnimation,
+      locale,
       replaceText,
-      locale
-    };
-    await storage.setItem(`local:${settingsStoreKey}`, JSON.stringify(settings));
-    console.log('[JarGone]: Settings saved!');
-  };
+    }
+    await storage.setItem(`local:${settingsStoreKey}`, JSON.stringify(settings))
+    // eslint-disable-next-line no-console
+    console.log('[JarGone]: Settings saved!')
+  }
 
   const handleReset = async () => {
-    setApiKey('');
-    setConfettiAnimation(true);
-    setReplaceText(true);
-    setLocale('english');
+    setApiKey('')
+    setConfettiAnimation(true)
+    setReplaceText(true)
+    setLocale('english')
 
     const settings = {
       apiKey: '',
       confettiAnimation: true,
+      locale,
       replaceText: true,
-      locale
-    };
-    await storage.setItem(`local:${settingsStoreKey}`, JSON.stringify(settings));
-    console.log('[JarGone]: Settings reset.');
-  };
+    }
+    await storage.setItem(`local:${settingsStoreKey}`, JSON.stringify(settings))
+    // eslint-disable-next-line no-console
+    console.log('[JarGone]: Settings reset.')
+  }
 
   return (
     <ThemeProvider theme={theme}>
       <Box
         sx={{
-          minHeight: "100vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          alignItems: 'center',
           background: `linear-gradient(0deg, ${theme.palette.yellowShade!.main}, ${theme.palette.yellowShade!.light})`,
+          display: 'flex',
+          justifyContent: 'center',
+          minHeight: '100vh',
         }}
       >
         <Card
           sx={{
-            width: 400,
-            boxShadow: 0,
             borderRadius: 6,
+            boxShadow: 0,
+            width: 400,
           }}
         >
           <CardContent>
 
-            <JargonCard keyword="settings" type="plural noun" meaning="the controls of a piece of equipment." />
+            <JargonCard keyword="settings" meaning="the controls of a piece of equipment." type="plural noun" />
 
             <Divider sx={{ mb: 2, mx: 2 }} />
 
             <Box sx={{ px: 2, py: 1 }}>
-              <Box sx={{ my: 2, letterSpacing: -0.5 }}>
-                <Typography variant='overline' sx={{ fontWeight: 700 }}>OpenAI API Key</Typography>
+              <Box sx={{ letterSpacing: -0.5, my: 2 }}>
+                <Typography sx={{ fontWeight: 700 }} variant="overline">OpenAI API Key</Typography>
                 <TextField
-                  fullWidth
                   autoComplete="off"
-                  variant="outlined"
+                  fullWidth
+                  helperText={i18n.t('aiKeyHelper')}
+                  onChange={e => setApiKey(e.target.value)}
                   placeholder="sk-"
                   value={apiKey}
-                  helperText={i18n.t('aiKeyHelper')}
-                  onChange={(e) => setApiKey(e.target.value)}
+                  variant="outlined"
                 />
               </Box>
 
-              <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", my: 2, letterSpacing: -0.5 }}>
+              <Box sx={{ alignItems: 'center', display: 'flex', justifyContent: 'space-between', letterSpacing: -0.5, my: 2 }}>
                 <Typography>Confetti Animation</Typography>
                 <SwitchTextTrack
                   checked={confettiAnimation}
-                  onChange={(e) => setConfettiAnimation(e.target.checked)}
+                  onChange={e => setConfettiAnimation(e.target.checked)}
                 />
               </Box>
 
-              <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", my: 2, letterSpacing: -0.5 }}>
+              <Box sx={{ alignItems: 'center', display: 'flex', justifyContent: 'space-between', letterSpacing: -0.5, my: 2 }}>
                 <Typography>Replace Text</Typography>
                 <SwitchTextTrack
                   checked={replaceText}
-                  onChange={(e) => setReplaceText(e.target.checked)}
+                  onChange={e => setReplaceText(e.target.checked)}
                 />
               </Box>
 
-              <Typography variant='overline' sx={{ fontWeight: 700 }}>Language</Typography>
+              <Typography sx={{ fontWeight: 700 }} variant="overline">Language</Typography>
               <Select
-                labelId="locale-select-label"
-                id="locale-select"
                 fullWidth
+                id="locale-select"
+                labelId="locale-select-label"
+                onChange={e => setLocale(e.target.value)}
                 value={locale}
-                onChange={(e) => setLocale(e.target.value)}
               >
                 <MenuItem value="arabic">العربية</MenuItem>
                 <MenuItem value="english">English</MenuItem>
@@ -183,28 +186,38 @@ function App() {
               </Select>
             </Box>
 
-            <Divider sx={{ mt: 6, mb: 2, mx: 2 }} />
+            <Divider sx={{ mb: 2, mt: 6, mx: 2 }} />
 
-            <Box sx={{ display: "flex", justifyContent: "space-between", mt: 2, mx: 2 }}>
-              <Button variant="text" sx={{ borderRadius: 4 }} color="error" onClick={async () => {
-                await handleReset();
-                setMessage('Settings reset.');
-                setTimeout(() => setMessage(''), 3000);
-              }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2, mx: 2 }}>
+              <Button
+                color="error"
+                onClick={async () => {
+                  await handleReset()
+                  setMessage('Settings reset.')
+                  setTimeout(() => setMessage(''), 3000)
+                }}
+                sx={{ borderRadius: 4 }}
+                variant="text"
+              >
                 reset
               </Button>
 
               {message && (
-                <Typography variant="body2" color="primary" sx={{ mt: 1 }}>
+                <Typography color="primary" sx={{ mt: 1 }} variant="body2">
                   {message}
                 </Typography>
               )}
 
-              <Button variant="outlined" sx={{ borderRadius: 4 }} color="primary" onClick={async () => {
-                await handleSave();
-                setMessage('Settings saved!');
-                setTimeout(() => setMessage(''), 3000);
-              }}>
+              <Button
+                color="primary"
+                onClick={async () => {
+                  await handleSave()
+                  setMessage('Settings saved!')
+                  setTimeout(() => setMessage(''), 3000)
+                }}
+                sx={{ borderRadius: 4 }}
+                variant="outlined"
+              >
                 save
               </Button>
             </Box>
