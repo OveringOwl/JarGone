@@ -6,7 +6,7 @@ export default defineContentScript({
     let mouseX = 0
     let mouseY = 0
 
-    document.addEventListener('contextmenu', (event) => {
+    document.addEventListener('mousemove', (event) => {
       mouseX = event.clientX
       mouseY = event.clientY
     })
