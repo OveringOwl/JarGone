@@ -1,5 +1,6 @@
+// eslint-disable-next-line unused-imports/no-unused-vars
 interface Keyword {
-  keyword: string;
-  type: string;
-  meaning: string;
+  keyword: string
+  meaning: string
+  type: string
 }
