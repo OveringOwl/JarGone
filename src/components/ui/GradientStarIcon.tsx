@@ -11,10 +11,10 @@ interface GradientStarIconProps {
 }
 
 const GradientStarIcon: React.FC<GradientStarIconProps> = ({
+  gradientColors = { end: '#A2AAB4', start: '#A2AAB4' },
   height = '24',
+  uniqueId,
   width = '24',
-  gradientColors = { start: '#A2B4AC', end: '#A2B4AC' },
-  uniqueId
 }) => {
   return (
     <svg

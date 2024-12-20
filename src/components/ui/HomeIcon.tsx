@@ -7,9 +7,9 @@ interface HomeIconProps {
 }
 
 const HomeIcon: React.FC<HomeIconProps> = ({
+  color = '#A2AAB4',
   height = '24',
   width = '24',
-  color = '#A2B4AC',
 }) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 24 24">
