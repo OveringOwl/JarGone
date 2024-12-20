@@ -24,9 +24,16 @@ export default defineBackground(() => {
       const locale = settings.locale || 'english'
       const enableReplaceText = settings.replaceText !== false
 
+      try {
+        if (tab.id) {
+          await browser.scripting.executeScript({
+            files: ['/content-scripts/content.js'],
+            target: { tabId: tab.id },
+          })
+        }
+
       browser.tabs.sendMessage(tab.id, { state: 'waiting', type: 'CHANGE_CURSOR' })
 
-      try {
         const result = await fetchLLMResponse(selectedText, apiKey, locale, enableReplaceText)
         const { keywordArray, rewrittenText } = processLLMResponse(result, selectedText)
         await storeKeywords(keywordArray)
