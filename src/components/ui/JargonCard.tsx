@@ -40,7 +40,7 @@ const JargonCard: React.FC<JargonCardProps> = ({ colorGradient, keyword, meaning
   const uniqueId = React.useId()
 
   const copyKeyword = () => {
-    const keywordEntry = `${keyword} • (${type}) • ${meaning}\nvia ahmd.sh!`
+    const keywordEntry = `${keyword} • (${type}) • ${meaning}\nvia https://jargone.framer.ai`
     navigator.clipboard.writeText(keywordEntry)
   }
 
