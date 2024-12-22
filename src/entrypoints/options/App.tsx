@@ -6,6 +6,7 @@ import Button from '@mui/material/Button'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import Divider from '@mui/material/Divider'
+import Link from '@mui/material/Link'
 import Select from '@mui/material/Select'
 import { ThemeProvider } from '@mui/material/styles'
 import TextField from '@mui/material/TextField'
@@ -97,7 +98,13 @@ function App() {
                 <TextField
                   autoComplete="off"
                   fullWidth
-                  helperText={i18n.t('aiKeyHelper')}
+                  helperText={(
+                    <Typography variant="caption">
+                      {i18n.t('apiKeyHelper')}
+                      &nbsp;&nbsp;
+                      <Link color="inherit" href="https://github.com/OveringOwl/JarGone?tab=readme-ov-file#faq" target="_blank">{i18n.t('learnMore')}</Link>
+                    </Typography>
+                  )}
                   onChange={e => setApiKey(e.target.value)}
                   placeholder="sk-"
                   value={apiKey}
