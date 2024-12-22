@@ -44,7 +44,7 @@ export default defineContentScript({
       const range = selection.getRangeAt(0)
       range.deleteContents()
       const span = document.createElement('span')
-      span.textContent = newText
+      span.textContent = `${newText}\n`
       span.classList.add('zoom-in')
       range.insertNode(span)
 
