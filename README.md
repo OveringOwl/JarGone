@@ -77,7 +77,7 @@ If you would like to contribute to JarGone, please follow these steps:
 
 This extension requires an OpenAI API key to function. Create an API key [here](https://platform.openai.com/api-keys).
 
-We recommend [restricting your API key's access](https://help.openai.com/en/articles/8867743-assign-api-key-permissions) to the endpoint that this extension uses (which is currently chat/completions).
+We recommend [restricting your API key's access](https://help.openai.com/en/articles/8867743-assign-api-key-permissions) to the endpoint that this extension uses (which is currently `chat/completions`).
 
 ## License
 
