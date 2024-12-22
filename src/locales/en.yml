@@ -2,4 +2,5 @@ extension:
   name: jargone
   description: https://github.com/OveringOwl/jargone
 hello: Hello
-aiKeyHelper: Enter your API key (platform.openai.com/api-keys)
+apiKeyHelper: Enter your API key.
+learnMore: How?
