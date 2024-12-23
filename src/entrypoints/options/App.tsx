@@ -102,7 +102,7 @@ function App() {
                     <Typography variant="caption">
                       {i18n.t('apiKeyHelper')}
                       &nbsp;&nbsp;
-                      <Link color="inherit" href="https://github.com/OveringOwl/JarGone?tab=readme-ov-file#faq" target="_blank">{i18n.t('learnMore')}</Link>
+                      <Link color="inherit" href="https://github.com/OveringOwl/JarGone/blob/main/.github/docs/API_KEY.md" target="_blank">{i18n.t('learnMore')}</Link>
                     </Typography>
                   )}
                   onChange={e => setApiKey(e.target.value)}
