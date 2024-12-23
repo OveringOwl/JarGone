@@ -1,6 +1,6 @@
 extension:
   name: JarGone - Simple Language
-  description: https://github.com/OveringOwl/jargone
+  description: Learn new words and simplify complex jargon with a click!
 hello: Hello
 apiKeyHelper: Enter your API key.
 learnMore: The what, now?
