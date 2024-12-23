@@ -1,5 +1,5 @@
 extension:
-  name: jargone
+  name: JarGone - Simple Language
   description: https://github.com/OveringOwl/jargone
 hello: Hello
 apiKeyHelper: Enter your API key.
