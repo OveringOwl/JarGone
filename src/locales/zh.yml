@@ -1,4 +1,6 @@
 extension:
-  name: JarGone - Simple Language
-  description: Learn new words and simplify complex jargon with a click!
+  name: JarGone - 简洁语言
+  description: 轻松点击，学习新词汇并简化复杂术语！
 hello: 你好
+apiKeyHelper: 输入您的API密钥。
+learnMore: 什么？现在？
