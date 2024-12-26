@@ -1,6 +1,6 @@
 extension:
-  name: JarGone - Simple Language
-  description: Learn new words and simplify complex jargon with a click!
+  name: JarGone - AI Language and Grammar Simplifier
+  description: Grow vocabulary, learn grammar, and simplify complex jargon with a click!
 hello: Hello
 apiKeyHelper: Enter your API key.
 learnMore: The what, now?

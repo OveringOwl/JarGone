@@ -1,6 +1,6 @@
 extension:
-  name: JarGone - 简洁语言
-  description: 轻松点击，学习新词汇并简化复杂术语！
+  name: JarGone - AI Language and Grammar Simplifier
+  description: 只需点击一下即可学习语法、增加词汇量并简化复杂的术语！
 hello: 你好
 apiKeyHelper: 输入您的API密钥。
 learnMore: 什么？现在？
