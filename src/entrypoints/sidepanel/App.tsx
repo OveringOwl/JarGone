@@ -69,7 +69,7 @@ function App() {
         <header id="header">
           <img alt="JarGone logo" className="logo" draggable="false" src={imageUrl} user-select="none" />
           <span className="icon">
-            <IconButton aria-label="contact support" href="mailto:overingowl+jargone+support@gmail.com">
+            <IconButton aria-label="contact support" href="https://jargone.framer.ai/support" target="_blank">
               <ReportIcon />
             </IconButton>
             <IconButton aria-label="delete keyword history" onClick={clearKeywordHistory}>
