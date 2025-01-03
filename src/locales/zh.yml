@@ -1,6 +1,19 @@
 extension:
-  name: JarGone - AI Language and Grammar Simplifier
+  name: JarGone - AI语言和语法简化器
   description: 只需点击一下即可学习语法、增加词汇量并简化复杂的术语！
-hello: 你好
+errorCardKeyword: 错误发生
+errorCardMeaning: 哦不！帝国反击了... 详情
+errorCardType: 错误
+settingsCardKeyword: 设置
+settingsCardMeaning: 一种设备的控制装置。
+settingsCardType: 复数名词
+apiKeyLabel: OpenAI API密钥
 apiKeyHelper: 输入您的API密钥。
-learnMore: 什么？现在？
+learnMore: 了解更多
+confettiSetting: 五彩纸屑动画
+replaceTextSetting: 重写文本
+languageSelectLabel: 语言
+resetButtonLabel: 重置
+saveButtonLabel: 保存
+errorMessageApiKey: 无效的API密钥。请在设置中输入有效的API密钥。
+errorMessageGeneric: 获取失败。状态
