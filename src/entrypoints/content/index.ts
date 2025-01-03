@@ -91,7 +91,7 @@ export default defineContentScript({
         const regex = new RegExp(`\\b${keyword}\\b`, 'gi')
         modifiedText = modifiedText.replace(regex, (match) => {
           const backgroundColor = getTypeColors(type)
-          return `<span class="zoom-in" style="position:relative;display:inline-block;background-color:${backgroundColor};">${match}<span id="jargone-noreplace-tooltip" style="visibility:hidden;background-color:black;color:white;text-align:center;border-radius:4px;padding:4px;position:absolute;bottom:100%;left:50%;transform:translateX(-50%);white-space:nowrap;z-index:1000;opacity:0;transition:opacity0.2s;">${meaning}</span></span>`
+          return `<span class="zoom-in" style="position:relative;display:inline-block;background-color:${backgroundColor};">${match}<span id="jargone-noreplace-tooltip" style="visibility:hidden;background-color:black;color:white;text-align:center;border-radius:4px;padding:4px;position:absolute;bottom:100%;left:50%;transform:translateX(-50%);white-space:nowrap;z-index:1000;opacity:0;transition:opacity0.2s;z-index:1000;">${meaning}</span></span>`
         })
       })
 
