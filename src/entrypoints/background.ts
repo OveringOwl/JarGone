@@ -88,8 +88,8 @@ export default defineBackground(() => {
 
     if (!response.ok) {
       const errorMessage = response.status === 401
-        ? 'Invalid API key. Please check and try again.'
-        : `Failed to fetch. Status: ${response.status}`
+        ? i18n.t('errorMessageApiKey')
+        : `${i18n.t('errorMessageGeneric')}: ${response.status}`
       throw new Error(errorMessage)
     }
 
@@ -110,9 +110,9 @@ export default defineBackground(() => {
       return {
         keywordArray: [
           {
-            keyword: 'error occurred',
-            meaning: `oh no! the empire struck back... Details: ${error.message}`,
-            type: 'error',
+            keyword: i18n.t('errorCardKeyword'),
+            meaning: `${i18n.t('errorCardMeaning')}: ${error.message}`,
+            type: i18n.t('errorCardType'),
           },
         ],
         rewrittenText: fallbackText,
@@ -129,9 +129,9 @@ export default defineBackground(() => {
   async function handleLLMError(error: any) {
     const keywordArray = [
       {
-        keyword: 'error occurred',
-        meaning: `oh no! the empire struck back... Details: ${error}.`,
-        type: 'error',
+        keyword: i18n.t('errorCardKeyword'),
+        meaning: `${i18n.t('errorCardMeaning')}: ${error}`,
+        type: i18n.t('errorCardType'),
       },
     ]
 
