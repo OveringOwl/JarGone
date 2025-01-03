@@ -1,6 +1,19 @@
 extension:
   name: JarGone - AI Language and Grammar Simplifier
   description: Grow vocabulary, learn grammar, and simplify complex jargon with a click!
-hello: Hello
+errorCardKeyword: error occurred
+errorCardMeaning: oh no! the empire struck back... Details
+errorCardType: error
+settingsCardKeyword: settings
+settingsCardMeaning: the controls of a piece of equipment.
+settingsCardType: plural noun
+apiKeyLabel: OpenAI API Key
 apiKeyHelper: Enter your API key.
 learnMore: The what, now?
+confettiSetting: Confetti Animation
+replaceTextSetting: Rewrite Text
+languageSelectLabel: Language
+resetButtonLabel: reset
+saveButtonLabel: save
+errorMessageApiKey: Invalid API key. Please set a valid API key in the settings.
+errorMessageGeneric: Failed to fetch. Status
