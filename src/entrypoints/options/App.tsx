@@ -88,13 +88,13 @@ function App() {
         >
           <CardContent>
 
-            <JargonCard keyword="settings" meaning="the controls of a piece of equipment." type="plural noun" />
+            <JargonCard keyword={i18n.t('settingsCardKeyword')} meaning={i18n.t('settingsCardMeaning')} type={i18n.t('settingsCardType')} />
 
             <Divider sx={{ mb: 2, mx: 2 }} />
 
             <Box sx={{ px: 2, py: 1 }}>
               <Box sx={{ letterSpacing: -0.5, my: 2 }}>
-                <Typography sx={{ fontWeight: 700 }} variant="overline">OpenAI API Key</Typography>
+                <Typography sx={{ fontWeight: 700 }} variant="overline">{i18n.t('apiKeyLabel')}</Typography>
                 <TextField
                   autoComplete="off"
                   fullWidth
@@ -113,7 +113,7 @@ function App() {
               </Box>
 
               <Box sx={{ alignItems: 'center', display: 'flex', justifyContent: 'space-between', letterSpacing: -0.5, my: 2 }}>
-                <Typography>Confetti Animation</Typography>
+                <Typography>{i18n.t('confettiSetting')}</Typography>
                 <SwitchTextTrack
                   checked={confettiAnimation}
                   onChange={e => setConfettiAnimation(e.target.checked)}
@@ -121,14 +121,14 @@ function App() {
               </Box>
 
               <Box sx={{ alignItems: 'center', display: 'flex', justifyContent: 'space-between', letterSpacing: -0.5, my: 2 }}>
-                <Typography>Replace Text</Typography>
+                <Typography>{i18n.t('replaceTextSetting')}</Typography>
                 <SwitchTextTrack
                   checked={replaceText}
                   onChange={e => setReplaceText(e.target.checked)}
                 />
               </Box>
 
-              <Typography sx={{ fontWeight: 700 }} variant="overline">Language</Typography>
+              <Typography sx={{ fontWeight: 700 }} variant="overline">{i18n.t('languageSelectLabel')}</Typography>
               <Select
                 fullWidth
                 id="locale-select"
@@ -206,7 +206,7 @@ function App() {
                 sx={{ borderRadius: 4 }}
                 variant="text"
               >
-                reset
+                {i18n.t('resetButtonLabel')}
               </Button>
 
               {message && (
@@ -225,7 +225,7 @@ function App() {
                 sx={{ borderRadius: 4 }}
                 variant="outlined"
               >
-                save
+                {i18n.t('saveButtonLabel')}
               </Button>
             </Box>
 
