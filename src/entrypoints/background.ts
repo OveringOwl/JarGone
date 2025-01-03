@@ -47,7 +47,7 @@ export default defineBackground(() => {
       }
       catch (error) {
         console.error('Error:', error)
-        handleLLMError(tab.id, selectedText, enableReplaceText, error)
+        handleLLMError(error)
       }
       finally {
         browser.tabs.sendMessage(tab.id, { state: 'default', type: 'CHANGE_CURSOR' })
@@ -126,7 +126,7 @@ export default defineBackground(() => {
     await storage.setItem(`local:${keywordStoreKey}`, JSON.stringify([...keywordHistory, ...keywordArray]))
   }
 
-  async function handleLLMError(tabId: number, fallbackText: string, enableReplaceText: boolean, error: any) {
+  async function handleLLMError(error: any) {
     const keywordArray = [
       {
         keyword: 'error occurred',
