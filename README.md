@@ -3,7 +3,9 @@
 <h3 align="center">Simplify complex jargon by translating it into clear, accessible language with a single click!</h3>
 
 <p align="center">
-    <a href="https://forms.gle/cH8xQ47McfeMe2S99">Launching Soon!</a>
+    <a href="https://chromewebstore.google.com/detail/jargone-simple-language/aaoocbpffdjkmdhffdmblfoombokbmgn?utm_source=github&utm_medium=organic_social&utm_campaign=developer">Chrome</a>
+    •
+    <a href="https://microsoftedge.microsoft.com/addons/detail/ikpljmedobbfpglfkbmioidacepigahf?utm_source=github&utm_medium=organic_social&utm_campaign=developer">Edge</a>
 </p>
 
 <h3 align="center"><img width="700" alt="app screenshots" src="./.github/assets/cover.png"></h3>
